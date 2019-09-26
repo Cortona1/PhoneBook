@@ -40,4 +40,12 @@ public class PhoneBook {
         }
     }
 
+    public String searchByNumber(String phoneNumber){
+        for (Person person : this.phoneBook) {
+            if (person.getJustNumbers().contains(phoneNumber)) {
+                return person.getName();
+            }
+        } return " not found";
+    }
+
 }
