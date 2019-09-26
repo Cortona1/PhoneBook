@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class UserInterface {
     private Scanner reader;
-
+    private PhoneBook phoneBook;
     public UserInterface(Scanner reader) {
         this.reader = reader;
-
+        this.phoneBook = new PhoneBook();
     }
 
     public void start() {
@@ -53,7 +53,7 @@ public class UserInterface {
         System.out.print("number: ");
         String userNumber = this.reader.nextLine();
 
-        this.phoneBook.addANumber(userNumber, userInput);
+        this.phoneBook.addANumber(userInput, userNumber);
         System.out.println("");
     }
 
