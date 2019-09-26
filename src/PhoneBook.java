@@ -101,7 +101,7 @@ public class PhoneBook {
 
         for (Person person : this.phoneBook) {
 
-            if (person.returnName().contains(keyword) || person.returnAddress().contains(keyword)) {
+            if (person.getName().contains(keyword) || person.getAddress().contains(keyword)) {
                 filteredPersons.add(person);
             }
         }
@@ -119,15 +119,15 @@ public class PhoneBook {
     public void filteredSearchResults(List<Person> listPersons) {
         for(Person person: listPersons) {
 
-            if (person.returnAddress().equals("")){
-                System.out.println(" " + person.returnName());
+            if (person.getAddress().equals("")){
+                System.out.println(" " + person.getName());
                 System.out.println("  address unknown");
                 System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
                         + "\n");
 
             } else {
-                System.out.println(" " + person.returnName());
-                System.out.println("  address: " + person.returnAddress());
+                System.out.println(" " + person.getName());
+                System.out.println("  address: " + person.getAddress());
                 System.out.print("  phone number: \n " + person.getJustNumbersVar()
                         + "\n");
             }
