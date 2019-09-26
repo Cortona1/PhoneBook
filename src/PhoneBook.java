@@ -30,7 +30,7 @@ public class PhoneBook {
 
     public void searchByPerson(String name){
         if(!this.listOfNames.contains(name)) {
-            System.out.println(" not found\n" + "\n");
+            System.out.println(" not found\n");
         } else {
             for (Person person : this.phoneBook) {
                 if(person.getName().equals(name)){
@@ -43,7 +43,7 @@ public class PhoneBook {
     public String searchByNumber(String phoneNumber){
         for (Person person : this.phoneBook) {
             if (person.getJustNumbers().contains(phoneNumber)) {
-                return person.getName();
+                return " " + person.getName();
             }
         } return " not found";
     }
@@ -79,6 +79,57 @@ public class PhoneBook {
                     System.out.print("  phone number: \n " + person.getJustNumbersVar()
                             + "\n");
                 }
+            }
+        }
+    }
+
+    public void removeAPersonsInfo(String name) {
+        List<Person> toRemove = new ArrayList<Person>();
+        for (Person person : this.phoneBook) {
+            if (person.getName().equals(name)) {
+                toRemove.add(person);
+
+            }
+        }
+        this.phoneBook.removeAll(toRemove);
+        this.listOfNames.remove(name);
+    }
+
+    public void filterdSearch(String keyword) {
+        List<Person> filteredPersons = new ArrayList<Person>();
+        Collections.sort(this.phoneBook);
+
+        for (Person person : this.phoneBook) {
+
+            if (person.returnName().contains(keyword) || person.returnAddress().contains(keyword)) {
+                filteredPersons.add(person);
+            }
+        }
+        if (filteredPersons.isEmpty()) {
+            System.out.println(" keyword not found");
+
+
+        }
+        if (!filteredPersons.isEmpty()) {
+            filteredSearchResults(filteredPersons);
+        }
+    }
+
+
+    public void filteredSearchResults(List<Person> listPersons) {
+        for(Person person: listPersons) {
+
+            if (person.returnAddress().equals("")){
+                System.out.println(" " + person.returnName());
+                System.out.println("  address unknown");
+                System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
+                        + "\n");
+
+            } else {
+                System.out.println(" " + person.returnName());
+                System.out.println("  address: " + person.returnAddress());
+                System.out.print("  phone number: \n " + person.getJustNumbersVar()
+                        + "\n");
             }
         }
     }

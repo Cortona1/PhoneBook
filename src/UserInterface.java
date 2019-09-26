@@ -40,9 +40,9 @@ public class UserInterface {
             } else if(userInput.equals("5")){
                 searchForPersonalInfo();
             } else if(userInput.equals("6")){
-
+                removeAPersonsInfo();
             } else if(userInput.equals("7")){
-
+                filteredSearchByKeyword();
             }
         }
     }
@@ -67,7 +67,7 @@ public class UserInterface {
         System.out.print("number: ");
         String userInput = this.reader.nextLine();
         String name = this.phoneBook.searchByNumber(userInput);
-        System.out.println(name + "\n");
+        System.out.println(" " + name + "\n");
 
     }
 
@@ -88,4 +88,15 @@ public class UserInterface {
         this.phoneBook.searchForPersonalInfo(userName);
     }
 
+    public void removeAPersonsInfo() {
+        System.out.print("whose information: ");
+        String userInput = this.reader.nextLine();
+        this.phoneBook.removeAPersonsInfo(userInput);
+    }
+
+    public void filteredSearchByKeyword() {
+        System.out.print("keyword (if empty, all listed): ");
+        String keyword = this.reader.nextLine();
+        this.phoneBook.filterdSearch(keyword);
+    }
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private String address;
     private List<String> phoneNumbers;
@@ -60,6 +60,30 @@ public class Person {
             return helper;
         }
     }
+    public String returnPhoneNumbers(){
+        Boolean isEmpty = this.phoneNumbers.isEmpty();
+        if (isEmpty) {
+            return "phone number not found";
+        } else {
+            String helper = "";
+            for (String phoneNumber : this.phoneNumbers) {
+                helper += phoneNumber + "\n   ";
+            }
+            return "  phone numbers:\n   " + helper;
+        }
+    }
 
+    public String returnAddress(){
+        return this.address;
+    }
+
+    public String returnName(){
+        return this.name;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        return returnName().compareTo(person.returnName());
+    }
 
 }
