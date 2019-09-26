@@ -36,9 +36,9 @@ public class UserInterface {
             } else if(userInput.equals("3")){
                 searchForPersonByPhoneNum();
             } else if(userInput.equals("4")){
-
+                addAnAddress();
             } else if(userInput.equals("5")){
-
+                searchForPersonalInfo();
             } else if(userInput.equals("6")){
 
             } else if(userInput.equals("7")){
@@ -70,4 +70,22 @@ public class UserInterface {
         System.out.println(name + "\n");
 
     }
+
+    public void addAnAddress(){
+        System.out.print("whose address: ");
+        String userName = this.reader.nextLine();
+        System.out.print("street: ");
+        String userStreet = this.reader.nextLine();
+        System.out.print("city: ");
+        String userCity = this.reader.nextLine();
+        this.phoneBook.addAnAddress(userName,userStreet, userCity);
+        System.out.println("");
+    }
+
+    public void searchForPersonalInfo() {
+        System.out.print("whose information: ");
+        String userName = this.reader.nextLine();
+        this.phoneBook.searchForPersonalInfo(userName);
+    }
+
 }

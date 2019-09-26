@@ -48,4 +48,39 @@ public class PhoneBook {
         } return " not found";
     }
 
+    public void addAnAddress(String name, String street, String city) {
+        if(!this.listOfNames.contains(name)) {
+            Person person = new Person(name);
+            this.listOfNames.add(name);
+            this.phoneBook.add(person);
+        }
+        for (Person person : this.phoneBook) {
+            if (person.getName().equals(name)) {
+                person.addAddress(street + " " + city);
+            }
+        }
+    }
+
+    public void searchForPersonalInfo(String name) {
+        if (!this.listOfNames.contains(name)){
+            System.out.println("  not found");
+
+        } else {
+            for(Person person: this.phoneBook) {
+
+                if (person.getName().equals(name) && person.getAddress().equals("")){
+
+                    System.out.println("  address unknown");
+                    System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
+                            + "\n");
+                    break;
+                } else {
+                    System.out.println("  address: " + person.getAddress());
+                    System.out.print("  phone number: \n " + person.getJustNumbersVar()
+                            + "\n");
+                }
+            }
+        }
+    }
+
 }

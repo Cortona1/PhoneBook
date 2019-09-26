@@ -45,5 +45,21 @@ public class Person {
         }
     }
 
+    public String getJustNumbersVar() {
+        Boolean isEmpty = this.phoneNumbers.isEmpty();
+        if (isEmpty) {
+            return "phone number not found";
+        } else {
+            String helper = "";
+            for (int i = 0; i < this.phoneNumbers.size(); i++) {
+                if (i == 0){
+                    helper += "  ";
+                }
+                helper += phoneNumbers.get(i) + "\n   ";
+            }
+            return helper;
+        }
+    }
+
 
 }
