@@ -32,7 +32,7 @@ public class UserInterface {
             } else if(userInput.equals("1")){
                 addANumber();
             } else if(userInput.equals("2")){
-
+                searchForPersonByPhoneNum();
             } else if(userInput.equals("3")){
 
             } else if(userInput.equals("4")){
@@ -56,5 +56,12 @@ public class UserInterface {
         this.phoneBook.addANumber(userInput, userNumber);
         System.out.println("");
     }
+
+    public void searchForPersonByPhoneNum() {
+        System.out.print("whose number: ");
+        String userInput = this.reader.nextLine();
+        this.phoneBook.searchByPerson(userInput);
+    }
+
 
 }

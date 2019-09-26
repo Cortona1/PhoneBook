@@ -28,4 +28,16 @@ public class PhoneBook {
 
     }
 
+    public void searchByPerson(String name){
+        if(!this.listOfNames.contains(name)) {
+            System.out.println(" not found\n" + "\n");
+        } else {
+            for (Person person : this.phoneBook) {
+                if(person.getName().equals(name)){
+                    System.out.println(person.getJustNumbers());
+                }
+            }
+        }
+    }
+
 }

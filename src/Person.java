@@ -25,6 +25,10 @@ public class Person {
         return this.name;
     }
 
+    public String getAddress(){
+        return this.address;
+    }
+
     public String getJustNumbers() {
         Boolean isEmpty = this.phoneNumbers.isEmpty();
         if (isEmpty) {
