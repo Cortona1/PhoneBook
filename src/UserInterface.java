@@ -30,7 +30,7 @@ public class UserInterface {
             if(userInput.equals("x")) {
                 break;
             } else if(userInput.equals("1")){
-
+                addANumber();
             } else if(userInput.equals("2")){
 
             } else if(userInput.equals("3")){
@@ -45,6 +45,16 @@ public class UserInterface {
 
             }
         }
+    }
+
+    public void addANumber(){
+        System.out.print("whose number: ");
+        String userInput = this.reader.nextLine();
+        System.out.print("number: ");
+        String userNumber = this.reader.nextLine();
+
+        this.phoneBook.addANumber(userNumber, userInput);
+        System.out.println("");
     }
 
 }
