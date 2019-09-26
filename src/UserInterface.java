@@ -10,6 +10,7 @@ public class UserInterface {
 
     public void start() {
         introduction();
+        askUser();
 
     }
 
@@ -19,6 +20,31 @@ public class UserInterface {
                 + " phone number\n 4 add an address\n 5 search for personal"
                 + " information\n 6 delete personal information\n 7 filtered"
                 + " listing\n x quit\n");
+    }
+
+    public void askUser() {
+        while(true) {
+            System.out.print("command: ");
+            String userInput = this.reader.nextLine();
+
+            if(userInput.equals("x")) {
+                break;
+            } else if(userInput.equals("1")){
+
+            } else if(userInput.equals("2")){
+
+            } else if(userInput.equals("3")){
+
+            } else if(userInput.equals("4")){
+
+            } else if(userInput.equals("5")){
+
+            } else if(userInput.equals("6")){
+
+            } else if(userInput.equals("7")){
+
+            }
+        }
     }
 
 }
