@@ -66,18 +66,24 @@ public class PhoneBook {
             System.out.println("  not found\n");
 
         } else {
+
             for(Person person: this.phoneBook) {
 
-                if (person.getName().equals(name) && person.getAddress().equals("")){
-
-                    System.out.println("  address unknown");
-                    System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
-                            + "\n");
-                    break;
-                } else {
-                    System.out.println("  address: " + person.getAddress());
-                    System.out.print("  phone number: \n " + person.getJustNumbersVar()
-                            + "\n");
+                if (person.getName().equals(name)){
+                    if (person.getAddress().equals("")) {
+                        System.out.println("  address unknown");
+                        System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
+                                + "\n");
+                        break;
+                    } else {
+                        System.out.println("  address: " + person.getAddress());
+                        if (!person.getJustNumbersVar().equals("phone number not found"))
+                        System.out.print("  phone number: \n " + person.getJustNumbersVar()
+                                + "\n");
+                        else {
+                            System.out.print("  " +person.getJustNumbersVar() + "\n\n");
+                        }
+                    }
                 }
             }
         }
