@@ -63,7 +63,7 @@ public class PhoneBook {
 
     public void searchForPersonalInfo(String name) {
         if (!this.listOfNames.contains(name)){
-            System.out.println("  not found");
+            System.out.println("  not found\n");
 
         } else {
             for(Person person: this.phoneBook) {
@@ -106,7 +106,7 @@ public class PhoneBook {
             }
         }
         if (filteredPersons.isEmpty()) {
-            System.out.println(" keyword not found");
+            System.out.println(" keyword not found\n");
 
 
         }
@@ -120,12 +120,18 @@ public class PhoneBook {
         for(Person person: listPersons) {
 
             if (person.getAddress().equals("")){
-                System.out.println(" " + person.getName());
+                System.out.println("\n " + person.getName());
                 System.out.println("  address unknown");
-                System.out.print("  phone numbers: \n " + person.getJustNumbersVar()
+                System.out.print(" " + person.getJustNumbersVar()
                         + "\n");
 
-            } else {
+            }
+            if (person.getJustNumbers().equals("phone number not found")){
+                System.out.println("\n " + person.getName());
+                System.out.println("  address: " + person.getAddress());
+                System.out.println("  " + person.getJustNumbers() +"\n");
+
+            } else{
                 System.out.println(" " + person.getName());
                 System.out.println("  address: " + person.getAddress());
                 System.out.print("  phone number: \n " + person.getJustNumbersVar()

@@ -92,6 +92,7 @@ public class UserInterface {
         System.out.print("whose information: ");
         String userInput = this.reader.nextLine();
         this.phoneBook.removeAPersonsInfo(userInput);
+        System.out.println("");
     }
 
     public void filteredSearchByKeyword() {
